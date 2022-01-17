@@ -5,7 +5,7 @@ const AddBooks = () => (
     <input placeholder='ADD NEW Book' />
     <select name='books' id='book'>
         <option value='science'>Friction</option>
-        <option value='Action'>volvo</option>
+        <option value='Action'>Roshan</option>
         <option value='Economic'>money</option>
         <option value='Account'>credit</option>
     </select>
