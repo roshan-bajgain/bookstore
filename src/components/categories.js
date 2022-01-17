@@ -1,7 +1,7 @@
-const catagories = () => {
+const Catagories = () => {
     <div>
         <p>Under construction</p>
     </div>
 }
 
-export default catagories
+export default Catagories

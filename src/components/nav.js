@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-const nav = () => (
+const Nav = () => (
     <nav className='same'>
         <h1 className='heading'>Book Store CMS</h1>
         <ul>
@@ -9,4 +9,4 @@ const nav = () => (
         </ul>
     </nav>
 );
-export default nav;
+export default Nav;
