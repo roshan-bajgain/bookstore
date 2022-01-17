@@ -5,7 +5,7 @@ import CategoriesPage from '../redux/categories/categories';
 import Header from './header';
 
 const App = () => (
-  <>
+  <div>
     <Header />
     <BrowserRouter>
       <Route exact path="/">
@@ -15,7 +15,7 @@ const App = () => (
         <CategoriesPage />
       </Route>
     </BrowserRouter>
-  </>
+  </div>
 );
 
 export default App;

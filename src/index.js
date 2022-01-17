@@ -1,19 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Books from './components/books';
-import Nav from './components/nav'
-import Catagories from './components/categories'
+import { BrowserRouter as Router } from 'react-router-dom';
+import App from './components/App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Nav />
-      <Routes>
-      <Route exact path="/" element={<Books />} />
-      <Route exact path="/categories" element={<Catagories />} />
-      </Routes>
-    </BrowserRouter>
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
