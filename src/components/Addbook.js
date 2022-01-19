@@ -20,4 +20,27 @@ const AddBook = () => {
         setTitle('');
         setAuthor('');
       };
-}
+      return (
+        <form onSubmit={submitBookToStore} className="form-container">
+          <input
+            type="text"
+            name="title"
+            id="title"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+            placeholder="Book Title"
+          />
+           <input
+        type="text"
+        name="author"
+        id="author"
+        onChange={(e) => setAuthor(e.target.value)}
+        value={author}
+        placeholder="Book Author"
+      />
+      <button type="submit">Add Books</button>
+    </form>
+  );
+};
+
+export default AddBook;
