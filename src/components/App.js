@@ -2,7 +2,7 @@ import React from 'react';
 import {
   Route, BrowserRouter, Routes, Link,
 } from 'react-router-dom';
-import BooksPage from '../redux/books/books';
+import BooksPage from './Book';
 import CategoriesPage from '../redux/categories/categories';
 
 const App = () => (
