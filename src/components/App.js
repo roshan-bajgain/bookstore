@@ -5,7 +5,7 @@ import {
 import BooksPage from './Book';
 import CategoriesPage from '../redux/categories/categories';
 
-const App = () => (
+const App = () => {
   <BrowserRouter>
     <div className="wrapper-er">
       <nav className="nav">
@@ -19,6 +19,6 @@ const App = () => (
       <Route path="/" element={<BooksPage />} />
       <Route path="/calculator" element={<CategoriesPage />} />
     </Routes>
-  </BrowserRouter>
-);
+  </BrowserRouter>;
+};
 export default App;
