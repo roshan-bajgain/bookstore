@@ -7,7 +7,7 @@
 
 ## Live Demo
 
-[View Live Demo](https://inspiring-nightingale-bae9a0.netlify.app)
+[View Live Demo](https://relaxed-knuth-ce062a.netlify.app)
 
 ## Getting Started
 
