@@ -15,11 +15,13 @@ function BookForm() {
       author,
     };
     dispatch(addBook(Newbook));
+    setTitle('');
+    setAuthor('');
   };
   return (
     <form>
-      <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Book Title" />
-      <input onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Author" />
+      <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Book Title" />
+      <input value={author} onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Author" />
       <button onClick={addBookStore} type="button">Add Books</button>
     </form>
   );
