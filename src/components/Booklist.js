@@ -12,7 +12,7 @@ function Booklist() {
   return (
     <div>
       {books.map((book) => (
-        <BookItem book={book} key={book.item_id} />
+        <BookItem book={book} key={book.id} />
       ))}
     </div>
   );

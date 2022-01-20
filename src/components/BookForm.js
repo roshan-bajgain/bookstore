@@ -11,13 +11,13 @@ function BookForm() {
   const dispatch = useDispatch();
   const addBookStore = () => {
     const Newbook = {
-      item_id: uuid(),
+      id: uuid(),
       title,
       category,
     };
     dispatch(addBookApi(Newbook));
     setTitle('');
-    setAuthor('');
+    setCategory('');
   };
   return (
     <form>
