@@ -1,5 +1,8 @@
+import Axios from 'axios';
+
 const ADD_BOOK = 'bookStore/books/ADD_BOOK';
 const REMOVE_BOOK = 'bookStore/books/REMOVE_BOOK';
+const FETCH_BOOK = 'bookStore/books/FETCH_BOOK';
 
 const initialState = [];
 
@@ -13,12 +16,55 @@ export const removeBook = (payload) => ({
   payload,
 });
 
+export const fetchBook = (payload) => ({
+  type: FETCH_BOOK,
+  payload,
+});
+
+export const addBookApi = (FormData) => async(dispatch) => {
+  try {
+    await Axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books', FormData);
+    dispatch(addBook(FormData));
+
+  }
+  catch (error){
+    return error;
+  }
+};
+
+export const fetchBookApi = () => async(dispatch) => {
+  try {
+    const { data } = await Axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books');
+    const Books = Object.keys(data).map((key) => ({
+      ...data[key][0],
+      item_id: key,
+    }));
+
+    const payload = Object.values(Books);
+    dispatch(fetchBook(payload));
+  }
+  catch (error){
+    return error;
+  }
+}
+
+export const removeBookApi = (payload) => async (dispatch) => {
+  try {
+    await Axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books/${payload}`);
+    dispatch(removeBook(payload));
+  } catch (error) {
+    return error;
+  }
+};
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
       return state.filter((book) => book.id !== action.payload.id);
+      case FETCH_BOOK:
+      return action.payload;
     default:
       return state;
   }
