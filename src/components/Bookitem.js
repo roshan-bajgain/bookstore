@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { removeBookApi } from '../redux/books/books';
 
 const BookItem = (props) => {
   const {
@@ -12,7 +12,7 @@ const BookItem = (props) => {
 
   const dispatch = useDispatch();
   const removeBookFromStore = () => {
-    dispatch(removeBook({ id }));
+    dispatch(removeBookApi({ id }));
   };
 
   return (
@@ -21,12 +21,7 @@ const BookItem = (props) => {
         <h2>Hello</h2>
         <p>{title}</p>
         <p>{author}</p>
-        <button
-          onClick={removeBookFromStore}
-          type="button"
-        >
-          Delete
-        </button>
+        <button onClick={removeBookFromStore} type="button"> Delete </button>
       </div>
     </div>
   );
