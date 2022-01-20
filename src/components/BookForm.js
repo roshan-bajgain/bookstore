@@ -6,7 +6,7 @@ import { addBookApi } from '../redux/books/books';
 
 function BookForm() {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
   const addBookStore = () => {
@@ -22,7 +22,7 @@ function BookForm() {
   return (
     <form>
       <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Book Title" />
-      <input value={author} onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Author" />
+      <input value={category} onChange={(e) => setCategory(e.target.value)} type="text" placeholder="Author" />
       <button onClick={addBookStore} type="button">Add Books</button>
     </form>
   );

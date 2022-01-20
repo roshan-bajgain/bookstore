@@ -6,7 +6,7 @@ import { removeBookApi } from '../redux/books/books';
 const BookItem = (props) => {
   const {
     book: {
-      item_id, title, author,
+      item_id, title, category,
     },
   } = props;
 
@@ -20,7 +20,7 @@ const BookItem = (props) => {
       <div className="books-container d-flex">
         <h2>Hello</h2>
         <p>{title}</p>
-        <p>{author}</p>
+        <p>{category}</p>
         <button onClick={removeBookFromStore} type="button"> Delete </button>
       </div>
     </div>
@@ -30,7 +30,7 @@ BookItem.propTypes = {
   book: PropTypes.shape({
     item_id: PropTypes.string,
     title: PropTypes.string,
-    author: PropTypes.string,
+    category: PropTypes.string,
   }).isRequired,
 };
 
