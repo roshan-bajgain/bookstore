@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 // import { addBook } from '../redux/books/books';
-import { addBookApi } from '../redux/books/books'
+import { addBookApi } from '../redux/books/books';
 
 function BookForm() {
   const [title, setTitle] = useState('');
@@ -11,9 +11,9 @@ function BookForm() {
   const dispatch = useDispatch();
   const addBookStore = () => {
     const Newbook = {
-      id: uuid(),
+      item_id: uuid(),
       title,
-      author,
+      category,
     };
     dispatch(addBookApi(Newbook));
     setTitle('');

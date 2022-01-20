@@ -21,40 +21,26 @@ export const fetchBook = (payload) => ({
   payload,
 });
 
-export const addBookApi = (FormData) => async(dispatch) => {
-  try {
+export const addBookApi = (payload) => async (dispatch) => {
+  const { id, title, category } = payload;
+  const newBook = { item_id: id, title, category };
     await Axios.post('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books', FormData);
     dispatch(addBook(FormData));
-
-  }
-  catch (error){
-    return error;
-  }
 };
 
-export const fetchBookApi = () => async(dispatch) => {
-  try {
-    const { data } = await Axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books');
-    const Books = Object.keys(data).map((key) => ({
-      ...data[key][0],
-      item_id: key,
-    }));
+export const fetchBookApi = () => async (dispatch) => {
+    const books = await Axios.get('https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books');
+    const mapBooks = Object.entries(books.data).map(([id, book]) => {
+      const { category, title } = book[0];
+      return { id, category, title };
+    });
+    dispatch(fetchBook(mapBooks));
+};
 
-    const payload = Object.values(Books);
-    dispatch(fetchBook(payload));
-  }
-  catch (error){
-    return error;
-  }
-}
-
-export const removeBookApi = (payload) => async (dispatch) => {
-  try {
+export const removeBookApi = (id) => async (dispatch) => {
     await Axios.delete(`https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3S63EgRauta5QFkOHbpD/books/${payload}`);
     dispatch(removeBook(payload));
-  } catch (error) {
-    return error;
-  }
+    dispatch(removeBook(id));
 };
 
 const reducer = (state = initialState, action) => {
@@ -62,8 +48,8 @@ const reducer = (state = initialState, action) => {
     case ADD_BOOK:
       return [...state, action.payload];
     case REMOVE_BOOK:
-      return state.filter((book) => book.id !== action.payload.id);
-      case FETCH_BOOK:
+      return state.filter((book) => book.item_id !== action.payload.id);
+    case FETCH_BOOK:
       return action.payload;
     default:
       return state;

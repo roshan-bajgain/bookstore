@@ -6,13 +6,13 @@ import { removeBookApi } from '../redux/books/books';
 const BookItem = (props) => {
   const {
     book: {
-      id, title, author,
+      item_id, title, author,
     },
   } = props;
 
   const dispatch = useDispatch();
   const removeBookFromStore = () => {
-    dispatch(removeBookApi({ id }));
+    dispatch(removeBookApi({ item_id }));
   };
 
   return (
@@ -28,7 +28,7 @@ const BookItem = (props) => {
 };
 BookItem.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.string,
+    item_id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
   }).isRequired,
