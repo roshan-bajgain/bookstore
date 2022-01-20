@@ -18,7 +18,6 @@ const BookItem = (props) => {
   return (
     <div>
       <div className="books-container d-flex">
-        <h2>Hello</h2>
         <p>{title}</p>
         <p>{category}</p>
         <button onClick={removeBookFromStore} type="button"> Delete </button>
