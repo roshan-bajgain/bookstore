@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 @import url("https://fonts.googleapis.com/css?family=Roboto Slab'");
 
+body {
+  background-color: #f5f6fa;
+}
+
 .link a {
   text-decoration: none;
   width: 3.688rem;
@@ -46,4 +50,40 @@
   line-height: normal;
   letter-spacing: -0.18px;
   color: #888;
+}
+
+.input {
+  width: 40%;
+  height: 1.813rem;
+  margin: 1.188rem 2.125rem 0 0;
+  padding: 0.813rem 1.5rem 0.813rem 1.063rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+}
+
+.category {
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+  width: 20%;
+  height: 1.813rem;
+  margin: 1.188rem 2.125rem 0 0;
+  padding: 0.813rem 1.5rem 0.813rem 1.063rem;
+}
+
+.form-wrapper {
+  display: flex;
+}
+
+.btn {
+  width: 15%;
+  margin: 1.188rem 2.125rem 0 0;
+  padding: 0.813rem 1.5rem 0.813rem 1.063rem;
+  border: solid 1px #e8e8e8;
+  border-radius: 4px;
+  background-color: #0290ff;
+}
+
+.btn  input:-ms-input-placeholder {
+  color: #fafafa;
 }
