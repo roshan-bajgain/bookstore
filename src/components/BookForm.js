@@ -1,27 +1,27 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { addBookApi } from '../redux/books/books';
 
 function BookForm() {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
   const addBookStore = () => {
     const Newbook = {
       id: uuid(),
       title,
-      author,
+      category,
     };
-    dispatch(addBook(Newbook));
+    dispatch(addBookApi(Newbook));
     setTitle('');
-    setAuthor('');
+    setCategory('');
   };
   return (
     <form>
       <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Book Title" />
-      <input value={author} onChange={(e) => setAuthor(e.target.value)} type="text" placeholder="Author" />
+      <input value={category} onChange={(e) => setCategory(e.target.value)} type="text" placeholder="Author" />
       <button onClick={addBookStore} type="button">Add Books</button>
     </form>
   );
