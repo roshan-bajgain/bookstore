@@ -51,7 +51,7 @@ body {
   font-style: normal;
   line-height: normal;
   letter-spacing: -0.18px;
-  color: #888888;
+  color: #888;
 }
 
 .input {
@@ -118,13 +118,13 @@ body {
   margin-top: 21px;
   display: flex;
   align-items: center;
-
 }
+
 .btn1 {
   color: #4386bf;
   border: solid 1px transparent;
   font-size: 1rem;
-  background-color: #ffffff;
+  background-color: #fff;
 }
 
 .books-container {
@@ -175,15 +175,6 @@ body {
 .update-progg-c {
   display: flex;
   flex-direction: column;
-}
-
-.chapter-h2 {
-  color: #121212;
-  opacity: 0.5;
-  font-family: 'RobotoSlab', sans-serif;
-  margin: 0;
-  font-size: 15px;
-  font-weight: 300;
 }
 
 .chapter-h2 {
