@@ -20,9 +20,12 @@ function BookForm() {
   };
   return (
     <form>
-      <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Book Title" />
-      <input value={category} onChange={(e) => setCategory(e.target.value)} type="text" placeholder="Author" />
-      <button onClick={addBookStore} type="button">Add Books</button>
+      <h2 className="Newbook">ADD NEW BOOK</h2>
+      <div className="form-wrapper">
+        <input className="input" value={title} onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Book Title" required />
+        <input className="category" value={category} onChange={(e) => setCategory(e.target.value)} type="text" placeholder="Category" required />
+        <button className="btn" onClick={addBookStore} type="button">Add Books</button>
+      </div>
     </form>
   );
 }

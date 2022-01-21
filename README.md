@@ -7,7 +7,7 @@
 
 ## Live Demo
 
-[View Live Demo](https://relaxed-knuth-ce062a.netlify.app)
+[View Live Demo](https://agitated-lovelace-be43e3.netlify.app)
 
 ## Getting Started
 
